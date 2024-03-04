@@ -4,6 +4,7 @@ library(tidyterra)
 #library(zipr)
 library(stringr)
 
+# function to calculate julian hour
 hoy <- function(date){
   (yday(date)-1)*24 + hour(date) + round(minute(date)/60, 0)
   #round(julian(date, origin = as_date('2021-01-01'))*24, 0)
@@ -17,7 +18,7 @@ template_rast <- rast("E:\\TAMUK_Wildfire\\Data\\LEMMA\\2023_05_22_fried\\shapef
 
 
 ############################################
-### CI polygons
+### Courtney Intel aerial IR polygons
 
 # Prior to loading shapefiles, I looped through the entire library of downloaded Courtney Intel kmz files, extracted the layers called 'Heat' and saved them as 
 # shapefiles with the same filename as the kmz file. Unfortunately I accidentally deleted the exact lines of code I used.
@@ -78,7 +79,10 @@ plot(CI_rast)
 
 writeRaster(CI_rast, 'E:\\Dixie\\Dixie_progression\\Rasters_to_compare\\CI_raster_filled.tif', overwrite = TRUE)
 ############################################
-#### VIIRS-MODIS
+#### VIIRS-MODIS fire detection pixels
+
+# this layer consists of merged VIIRS and MODIS fire detection points, clipped to the Dixie Fire AOI, filtered by date to the days between ignition and containment, and 
+# filtered to omit low-confidence points ('l' or confidence < 50)
 vm_pts <- vect('E:/Dixie/Dixie_progression/VIIRS/VIIRS_and_MODIS_dixie_highest_confidence.shp') 
 
 vm_time_info <- vm_pts %>% as.data.frame() %>% # terra (or tidyterra?) really doesn't like DateTime columns, so I had to cast to a dataframe
