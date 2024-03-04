@@ -19,4 +19,6 @@ These were developed from the following remotely sensed datasets:
 If you would like a copy of either layer, please reach out at my email: [tgestab@umich.edu](tgestab@umich.edu) or [thomas.estabrook@usda.gov](thomas.estabrook@usda.gov)
 
 ## Works cited:
+NRT VIIRS 375 m Active Fire product VNP14IMGT distributed from NASA FIRMS. Available on-line https://earthdata.nasa.gov/firms. doi:10.5067/FIRMS/VIIRS/VNP14IMGT_NRT.002
+
 Scaduto, Erica, Bin Chen, and Yufang Jin. "Satellite-based fire progression mapping: A comprehensive assessment for large fires in northern California." IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 13 (2020): 5102-5114.
