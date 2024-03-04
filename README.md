@@ -8,7 +8,7 @@ A script for testing out several methods of interpolating VIIRS and MODIS fire d
 - VIIRS_tin.tif - Smoothed TIN interpolation of VIIRS points done in QGIS. This was my earliest attempt and, while it has some obvious visual artefacts, it ended up performing best in the model.
 - VIIRS_MODIS_idw_2km.tif - IDW interpolation of a layer made by combining VIIRS and MODIS detections. The 2 km window size came from Scaduto et al. 2020. This layer would need to be masked to the actual final Dixie perimeter.
 - VIIRS_MODIS_win_375m.tif - each pixel is assigned the timestamp of the earliest fire detection within a 375-meter window.
-- CI_raster.tif - this map uses the Courtney Intel IR hotspot kmz files found here. Each pixel with a value denotes its earliest appearance in a CI hotspot kmz. The FTP archive has substantially more data that could be leveraged in a similar way, but the CI hotspots seemed to have the most consistent timestamps and so required less data cleaning. 
+- CI_raster.tif - this map uses the Courtney Intel IR hotspot kmz files found [here](https://ftp.wildfire.gov/public/incident_specific_data/calif_n/!CALFIRE/2021_Incidents/CA-BTU-009205_Dixie/IR/CourtneyIntel/). Each pixel with a value denotes its earliest appearance in a CI hotspot file. The FTP archive has substantially more data that could be leveraged in a similar way, but the CI hotspots seemed to have the most consistent timestamps and so required less data cleaning. 
 - CI_raster_filled.tif - as above, but uses the IDW map to fill in NA values.
 
 
